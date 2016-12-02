@@ -1,0 +1,17 @@
+on fs
+    # Pull props from build.prop
+    start setprops
+
+on boot
+    start chargeled
+
+service setprops /sbin/setprops.sh
+    oneshot
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+service chargeled /sbin/chargeled
+    disabled
+    seclabel u:r:healthd:s0
