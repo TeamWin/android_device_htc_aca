@@ -11,6 +11,7 @@
 # to install, nor will it allow an OTA to install on
 # a non-stock system.
 
+
 # Mount system (read-only)
 mount -t ext4 -o ro /dev/block/bootdevice/by-name/system /system
 

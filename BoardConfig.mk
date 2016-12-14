@@ -70,22 +70,21 @@ TARGET_PREBUILT_KERNEL := device/htc/aca/kernel
 #TARGET_USES_LOGD := true
 
 # Keymaster - Wait for qseecom to load
-#TARGET_KEYMASTER_WAIT_FOR_QSEE := true
-#TARGET_HW_DISK_ENCRYPTION := true
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+TARGET_HW_DISK_ENCRYPTION := true
 
 # TWRP Build Flags
 TW_THEME := portrait_hdpi
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_INCLUDE_CRYPTO := true
-#TW_NO_EXFAT_FUSE := true
+TW_NO_EXFAT_FUSE := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_NO_SCREEN_BLANK := true
-TARGET_RECOVERY_DEVICE_MODULES := chargeled libinit_aca # twrpdec strace libbinder libgui libui libEGL libGLESv2 libsync libprotobuf-cpp-lite libGLES_trace
-#TW_RECOVERY_ADDITIONAL_RELINK_FILES := $(OUT)/recovery/root/sbin/twrpdec $(OUT)/system/xbin/strace $(OUT)/system/lib64/libbinder.so $(OUT)/system/lib64/libgui.so $(OUT)/system/lib64/libui.so $(OUT)/system/lib64/libEGL.so $(OUT)/system/lib64/libGLESv2.so $(OUT)/system/lib64/libsync.so # $(OUT)/system/lib64/libprotobuf-cpp-lite.so $(OUT)/system/lib64/libGLES_trace.so
+TARGET_RECOVERY_DEVICE_MODULES := chargeled libinit_aca twrpdec strace
+TW_RECOVERY_ADDITIONAL_RELINK_FILES := $(OUT)/recovery/root/sbin/twrpdec $(OUT)/system/xbin/strace
 #TWRP_INCLUDE_LOGCAT := true
 
 # Vendor Init
-#TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_aca
