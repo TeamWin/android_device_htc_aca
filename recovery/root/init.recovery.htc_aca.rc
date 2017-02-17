@@ -1,4 +1,4 @@
-import init.recovery.vold_decrypt.rc
+import /init.recovery.htc_decrypt.rc
 
 on boot
     start chargeled
