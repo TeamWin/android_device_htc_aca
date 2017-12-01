@@ -87,4 +87,7 @@ TARGET_RECOVERY_DEVICE_MODULES := chargeled # twrpdec strace
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_aca
+TARGET_INIT_VENDOR_LIB := libinit_$(TARGET_DEVICE)
+
+# Additional sepolicy for hwservicemanager
+BOARD_SEPOLICY_DIRS += device/htc/aca/sepolicy
